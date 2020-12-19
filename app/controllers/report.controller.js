@@ -3,6 +3,7 @@ const Report = require('../models/report.model')
 exports.create = (req, res) => {
     // Validate request
     if (!req.body) {
+        console.log("Content can not be empty!")
         res.status(400).send({message: "Content can not be empty!"})
     };
 
@@ -16,6 +17,7 @@ exports.create = (req, res) => {
     // Add report to database
     Report.create(report, (err, data) => {
         if (err){
+            console.log(err.message || "Some error occurred while creating the report.")
             res.status(500).send({
                 message: err.message || "Some error occurred while creating the report."
             });
