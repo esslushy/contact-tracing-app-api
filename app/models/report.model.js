@@ -8,7 +8,7 @@ const Report = function(report) {
 };
 
 Report.create = (newReport, result) => {
-    sql.query(`INSERT INTO reports (testDate, testReceived, testType) VALUES(date(${newReport.dateTested}), date(${newReport.dateReceived}), '${newReport.testType}');`,
+    sql.query(`INSERT INTO reports (testDate, testReceived, testType) VALUES(date('${newReport.dateTested}'), date('${newReport.dateReceived}'), '${newReport.testType}');`,
     (err, res) => {
         // If error exists report it
         if(err){
