@@ -21,3 +21,5 @@ Report.create = (newReport, result) => {
         result(null, newReport)
     })
 }
+
+module.exports = Report
